@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1 class="mt-4">Info List</h1>
+    <div class="row">
+        {% for info in infos %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    {% if info.image %}
+                        <img src="{{ info.image.url }}" class="card-img-top" alt="{{ info.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ info.name }}</h5>
+                        <p class="card-text">Age: {{ info.age }}</p>
+                        <p class="card-text">Skills: {{ info.skills }}</p>
+                        <p class="card-text">City: {{ info.city }}</p>
+                        <p class="card-text">Email: {{ info.email }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
